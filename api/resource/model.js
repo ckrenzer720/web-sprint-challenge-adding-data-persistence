@@ -5,7 +5,7 @@ function getAll() {
   return db("resources");
 }
 
-async function add(resource) {
+async function addResource(resource) {
   return db("resources")
     .insert(resource)
     .then(([resource_id]) => {
@@ -15,5 +15,5 @@ async function add(resource) {
 
 module.exports = {
   getAll,
-  add,
+  addResource,
 };

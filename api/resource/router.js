@@ -13,7 +13,7 @@ router.get("/", async (req, res, next) => {
 router.post("/", (req, res, next) => {
   const resource = req.body;
 
-  Resource.add(resource)
+  Resource.addResource(resource)
     .then((resource) => {
       res.status(201).json(resource);
     })

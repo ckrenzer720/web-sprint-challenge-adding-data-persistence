@@ -7,12 +7,12 @@ const resourcesRouter = require("./resource/router");
 const taskRouter = require("./task/router");
 
 server.use(express.json());
-server.use("api/project", projectRouter);
-server.use("api/resource", resourcesRouter);
-server.use("api/task", taskRouter);
+server.use("/api/projects", projectRouter);
+server.use("/api/resources", resourcesRouter);
+server.use("/api/tasks", taskRouter);
 
-server.use("*", (req, res) => {
-  res.json({ message: "API is wired!" });
-});
+// server.use("*", (req, res) => {
+//   res.json({ message: "API is wired!" });
+// });
 
 module.exports = server;

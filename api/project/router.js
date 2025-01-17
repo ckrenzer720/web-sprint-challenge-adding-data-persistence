@@ -4,8 +4,8 @@ const Project = require("./model");
 
 router.get("/", async (req, res, next) => {
   Project.getAll()
-    .then((data) => {
-      res.json({ data, message: "Project Router" });
+    .then((project) => {
+      res.json({ project, message: "Project Router" });
     })
     .catch(next);
 });

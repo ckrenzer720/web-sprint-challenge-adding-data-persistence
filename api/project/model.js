@@ -6,9 +6,12 @@ async function getAll() {
     "project_id",
     "project_name",
     "project_description",
-    db.raw("project_completed = 1 as project_completed")
+    "project_completed"
   );
-  return projects;
+  return projects.map((project) => ({
+    ...project,
+    project_completed: Boolean(project.project_completed),
+  }));
 }
 
 async function addProject(project) {
@@ -18,10 +21,11 @@ async function addProject(project) {
       "project_id",
       "project_name",
       "project_description",
-      db.raw("project_completed = 1 as project_completed")
+      "project_completed"
     )
     .where("project_id", project_id)
     .first();
+  newProject.project_completed = Boolean(newProject.project_completed);
   return newProject;
 }
 

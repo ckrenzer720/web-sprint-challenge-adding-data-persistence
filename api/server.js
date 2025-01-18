@@ -11,8 +11,15 @@ server.use("/api/projects", projectRouter);
 server.use("/api/resources", resourcesRouter);
 server.use("/api/tasks", taskRouter);
 
-// server.use("*", (req, res) => {
-//   res.json({ message: "API is wired!" });
-// });
+server.use("*", (req, res) => {
+  res.json({ message: "API is wired!" });
+});
+
+server.use((err, req, res, next) => {
+  res.status(500).json({
+    message: err.message,
+    stack: err.stack,
+  });
+});
 
 module.exports = server;

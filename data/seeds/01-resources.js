@@ -6,8 +6,8 @@ const resources = [
   },
   {
     resource_id: 2,
-    resource_name: "barry",
-    resource_description: "an AI bear assisstant",
+    resource_name: "michael",
+    resource_description: "a human AI assisstant",
   },
 ];
 

@@ -3,7 +3,7 @@ const router = require("express").Router();
 const Project = require("./model");
 
 router.get("/", async (req, res, next) => {
-  Project.getAll()
+  Project.getProjects()
     .then((project) => {
       res.json(project);
     })

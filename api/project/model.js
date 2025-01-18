@@ -1,7 +1,7 @@
 // build your `Project` model here
 const db = require("../../data/dbConfig");
 
-async function getAll() {
+async function getProjects() {
   const projects = await db("projects").select(
     "project_id",
     "project_name",
@@ -29,4 +29,4 @@ async function addProject(project) {
   return newProject;
 }
 
-module.exports = { getAll, addProject };
+module.exports = { getProjects, addProject };
